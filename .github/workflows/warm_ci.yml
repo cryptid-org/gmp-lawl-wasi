@@ -27,4 +27,4 @@ jobs:
       run: |
         git clone https://github.com/cryptid-org/warm.git
         cd warm/
-        ./make.sh clang "--sysroot=../wasi-libc/sysroot -O2 -flto" llvm-ar
+        ./make.sh clang "--sysroot=/home/runner/work/warm/warm/wasi-libc/sysroot -O2 -flto" llvm-ar
