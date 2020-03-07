@@ -24,6 +24,4 @@ jobs:
         cd wasi-libc
         make WASM_CC=/usr/bin/clang WASM_AR=/usr/bin/llvm-ar WASM_NM=/usr/bin/llvm-nm
     - name: running script
-      run: |
-        cd ..
-        ./make.sh clang "--sysroot=./wasi-libc/sysroot -O2 -flto" llvm-ar
+      run: ./make.sh clang "--sysroot=./wasi-libc/sysroot -O2 -flto" llvm-ar
