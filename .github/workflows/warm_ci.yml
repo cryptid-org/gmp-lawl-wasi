@@ -25,7 +25,6 @@ jobs:
         make WASM_CC=/usr/bin/clang WASM_AR=/usr/bin/llvm-ar WASM_NM=/usr/bin/llvm-nm
     - name: running script
       run: |
-        cd ..
-        ls -l
-        pwd
-        ./make.sh clang "--sysroot=./wasi-libc/sysroot -O2 -flto" llvm-ar
+        git clone https://github.com/cryptid-org/warm.git
+        cd warm/
+        ./make.sh clang "--sysroot=../wasi-libc/sysroot -O2 -flto" llvm-ar
