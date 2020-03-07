@@ -11,6 +11,13 @@ jobs:
     steps:
     - name: installing llvm
       run: sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+    - name: creating symlinks
+      run: |
+        sudo ln -svf /usr/bin/clang-9 /usr/bin/clang
+        sudo ln -svf /usr/bin/wasm-ld-9 /usr/bin/wasm-ld
+        sudo ln -svf /usr/bin/llc-9 /usr/bin/llc
+        sudo ln -svf /usr/bin/llvm-nm-9 /usr/bin/llvm-nm
+        sudo ln -svf /usr/bin/llvm-ar-9 /usr/bin/llvm-ar
     - name: building wasi-libc
       run: |
         git clone https://github.com/WebAssembly/wasi-libc.git
